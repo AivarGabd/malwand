@@ -1,10 +1,11 @@
-import FramerMotionDemo from "./framer-motion-list/FramerMotionDemo";
+import FramerMotionDemo from "./example-components/framer-motion-list/FramerMotionDemo";
+
 
 
 export default function Home() {
   return (
     <>
-      <FramerMotionDemo />
+      <FramerMotionDemo/>
     </>
   )
 }

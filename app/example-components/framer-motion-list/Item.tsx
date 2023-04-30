@@ -2,7 +2,6 @@
 
 import { items } from "./data";
 import { motion, useMotionValue } from "framer-motion";
-import { openSpring, closeSpring } from "./animations";
 import { useWheelScroll } from "./utils/use-wheel-scroll";
 import { useEffect, useRef, useState } from "react";
 import { LoremIpsum } from "react-lorem-ipsum";
