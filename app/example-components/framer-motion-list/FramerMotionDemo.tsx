@@ -2,7 +2,7 @@
 
 import { LayoutGroup, AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Item } from "./Item";
+import { Item } from "./drafts/Item";
 import List from "./List";
 
 
@@ -22,7 +22,7 @@ const FramerMotionDemo = () => {
     }, [])
 
     return (
-        <div className="container">
+        <div className="max-w-[1200px] flex-[1_1_100%] px-[25px] py-[45px];">
             {id ? <>
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -30,7 +30,7 @@ const FramerMotionDemo = () => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2, delay: 0.1 }}
                     style={{ pointerEvents: "auto" }}
-                    className="overlay"
+                    className="z-[1] fixed will-change-[opacity] w-full inset-y-0 bg-zinc-800/[.8]"
                     onClick={() => {
                         setId(null)
                     }}
@@ -38,8 +38,6 @@ const FramerMotionDemo = () => {
                 </motion.div>
             </> : null}
             <List selectedId={id} setId={setId} />
-
-
         </div>
 
     )

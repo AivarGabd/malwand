@@ -1,8 +1,8 @@
 'use client'
 
-import { items } from "./data";
+import { items } from "../data";
 import { motion, useMotionValue } from "framer-motion";
-import { useWheelScroll } from "./utils/use-wheel-scroll";
+import { useWheelScroll } from "../utils/use-wheel-scroll";
 import { useEffect, useRef, useState } from "react";
 import { LoremIpsum } from "react-lorem-ipsum";
 

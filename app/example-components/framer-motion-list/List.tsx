@@ -1,7 +1,5 @@
 'use client'
-
 import { items } from "./data";
-import { memo } from "react";
 import ListCard from "./ListCard";
 
 
@@ -10,7 +8,7 @@ const List = ({
     setId
 }: any) => (
     <>
-        <ul className="card-list">
+        <ul className="flex flex-wrap content-start;">
             {items.map((item) => (
                 <>
                     <ListCard
