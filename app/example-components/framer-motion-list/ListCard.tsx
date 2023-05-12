@@ -26,12 +26,9 @@ const ListCard =
                             className={`pointer-events-auto relative overflow-hidden w-full h-full mx-auto my-0 rounded-[20px] bg-neutral-300 ${isSelected && 'h-auto max-w-[700px] overflow-hidden pointer-events-none;'}`}
                             layoutId={`card-container-${id}`}
                             layout
-                            transition={isSelected ? {
+                            transition={{
                                 stiffness: 300,
                                 damping: 35
-                            } : {
-                                stiffness: 200,
-                                damping: 30
                             }}
                         >
                             <motion.div
