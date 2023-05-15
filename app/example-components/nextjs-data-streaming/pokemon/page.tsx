@@ -1,9 +1,19 @@
-const App = ()=>{
+import Link from 'next/link'
+import data from '../pokemon.json'
 
 
-    return(
-        <div className="text-2xl">
-            test
+const App = () => {
+
+
+    return (
+        <div className='w-[1000px] bg-gray-300 flex flex-wrap'>
+            {data.map((pokemon, index) => (
+                <Link href={`/example-components/nextjs-data-streaming/pokemon`} key={pokemon.name}>
+                    <div className='m-[5px] p-[5px] bg-slate-100 grow shrink basis-[150px]'>
+                        {pokemon.name}
+                    </div>
+                </Link>
+            ))}
         </div>
     )
 }

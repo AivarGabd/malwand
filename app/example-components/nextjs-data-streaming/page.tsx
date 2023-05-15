@@ -1,20 +1,27 @@
-import Link from 'next/link'
-import data from './pokemon.json'
+import Comments from "./Comments"
+import { Suspense } from "react"
 
 
-const App = () => {
+const fetchDescription = () =>
+    new Promise((resolve) =>
+        setTimeout(() => resolve('Product information ready for SEO'), 100)
+    )
+
+
+
+const App = async () => {
+
+    const description = (await fetchDescription()) as string
 
     return (
         <main>
-            <div className='w-[1000px] bg-gray-300 flex flex-wrap'>
-                {data.map((pokemon, index) => (
-                    <Link href={`/example-components/nextjs-data-streaming/pokemon`} key={pokemon.name}>
-                        <div className='m-[5px] p-[5px] bg-slate-100 grow shrink basis-[150px]'>
-                            {pokemon.name}
-                        </div>
-                    </Link>
-                ))}
-            </div>
+            <h2 className='text-2xl'>Product description</h2>
+            <div>{description}</div>
+
+            <Suspense fallback={<div className={`font-bold text-2xl`}>Loading...</div>}>
+                {/* @ts-expect-error */}
+                <Comments />
+            </Suspense>
         </main>
     )
 }
